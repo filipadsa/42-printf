@@ -72,7 +72,7 @@ int main(void)
 
 ## 📝 Notes
 
-- All functions follow the **42 Norminette** coding standard.
-- Only allowed external functions: `malloc`, `free`, `write`, `va_start`, `va_arg`, `va_copy`, `va_end`.
-- Library created using `ar` command (no `libtool`).
+- All functions follow the **42 Norminette** coding standard;
+- Only allowed external functions: `malloc`, `free`, `write`, `va_start`, `va_arg`, `va_copy`, `va_end`;
+- Library created using `ar` command (no `libtool`);
 - Does **not** implement the original printf()'s buffer management.
