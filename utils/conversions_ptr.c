@@ -6,7 +6,7 @@
 /*   By: filda-si <filda-si@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:47:28 by filda-si          #+#    #+#             */
-/*   Updated: 2025/10/20 16:30:23 by filda-si         ###   ########.fr       */
+/*   Updated: 2025/10/20 17:05:58 by filda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	print_ptr(void *ptr, t_flags f)
 	int				w;
 
 	if (!ptr)
-		return (print_str("(null)", f));
+		return (print_str("(nil)", f));
 	addr = (unsigned long)ptr;
 	plen = get_ptr_len(addr);
 	w = plen + 2;

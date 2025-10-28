@@ -6,7 +6,7 @@
 /*   By: filda-si <filda-si@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:13:16 by filda-si          #+#    #+#             */
-/*   Updated: 2025/10/20 11:28:26 by filda-si         ###   ########.fr       */
+/*   Updated: 2025/10/20 16:47:31 by filda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,20 @@ int	print_char(char c, t_flags f)
 static int	handle_null_str(t_flags f)
 {
 	int	plen;
+	int	total;
 
 	if (f.dot && f.prec < 6)
 		plen = 0;
 	else
 		plen = 6;
+	total = 0;
 	if (f.width > plen && !f.minus)
-		return (print_pad(' ', f.width - plen) + write(1, "(null)", plen));
+		total += print_pad(' ', f.width - plen);
+	if (plen > 0)
+		total += write(1, "(null)", plen);
 	if (f.width > plen && f.minus)
-		return (write(1, "(null)", plen) + print_pad(' ', f.width - plen));
-	return (write(1, "(null)", plen));
+		total += print_pad(' ', f.width - plen);
+	return (total);
 }
 
 int	print_str(char *s, t_flags f)
