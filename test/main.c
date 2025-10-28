@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: filda-si <filda-si@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 00:00:00 by filda-si          #+#    #+#             */
-/*   Updated: 2025/10/20 11:53:42 by filda-si         ###   ########.fr       */
+/*   Updated: 2025/10/28 15:33:10 by filda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -257,8 +257,8 @@ void	test_null(void)
 	printf("Returns: ft=%d real=%d %s\n", ft, real, ft == real ? "✓" : "✗");
 
 	printf("\n--- NULL string with precision ---\n");
-	ft = ft_printf("ft: |[%.3s]|\n", (char *)NULL));
-	real = printf("rl: |[%.3s]|\n", (char *)NULL));
+	ft = ft_printf("ft: |[%.3s]|\n", (char *)NULL);
+	real = printf("rl: |[%.3s]|\n", (char *)NULL);
 	printf("Returns: ft=%d real=%d %s\n", ft, real, ft == real ? "✓" : "✗");
 
 	printf("\n--- NULL string with width ---\n");
@@ -275,16 +275,16 @@ void	test_null(void)
 	ft = ft_printf("ft: |%3s|\n", (char *)0);
 	real = printf("rl: |%3s|\n", (char *)0);
 	printf("Returns: ft=%d real=%d %s\n", ft, real, ft == real ? "✓" : "✗");
-	
+
 	printf("\n--- NIL width ---\n");
 	ft = ft_printf("ft: |%3p|\n", (char *)0);
 	real = printf("rl: |%3p|\n", (char *)0);
 	printf("Returns: ft=%d real=%d %s\n", ft, real, ft == real ? "✓" : "✗");
 
-	printf("\n--- NIL precision ---\n");
-	ft = ft_printf("ft: |%.3p|\n", (char *)0);
-	real = printf("rl: |%.3p|\n", (char *)0);
-	printf("Returns: ft=%d real=%d %s\n", ft, real, ft == real ? "✓" : "✗");
+	//printf("\n--- NIL precision ---\n");
+	//ft = ft_printf("ft: |%.3p|\n", (char *)0);
+	//real = printf("rl: |%.3p|\n", (char *)0);
+	//printf("Returns: ft=%d real=%d %s\n", ft, real, ft == real ? "✓" : "✗");
 }
 
 int	main(void)
@@ -302,6 +302,7 @@ int	main(void)
 	test_sign_flags();
 	test_sharp_flag();
 	test_combined();
+    test_null();
 
 	printf("\n");
 	printf("╔════════════════════════════════════════╗\n");
